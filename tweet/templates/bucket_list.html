@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div style="max-width: 700px; margin: auto; padding: 20px; text-align: center;">
+    <h2 style="color: white; font-weight: bold; margin-bottom:25px;">⭐ Your Bucket List</h2>
+
+    {% if tweets %}
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; text-align: left;">
+            {% for tweet in tweets %}
+                <div style="background: white; padding: 15px; border-radius: 10px;
+                            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);">
+                    
+                    <strong style="font-size: 16px; color: #555;">{{ tweet.user.username }}</strong>
+                    
+                    <p style="color: #222; font-size: 15px; line-height: 1.5;">{{ tweet.text }}</p>
+                    
+                    {% if tweet.photo %}
+                        <img src="{{ tweet.photo.url }}" alt="Tweet Image" 
+                             style="max-width: 100%; border-radius: 8px; margin-bottom: 8px;">
+                    {% endif %}
+
+                    <br>
+
+                    <!-- Styled Remove Text -->
+                    <form action="{% url 'remove_from_bucket_list' tweet.id %}" method="POST">
+                        {% csrf_token %}
+                        <span onclick="this.parentElement.submit();" 
+                              style="display: block; font-size: 14px; color: #777; cursor: pointer; 
+                                     margin-top: 8px;">❌ Remove</span>
+                    </form>
+
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p style="color: #777; font-size: 16px;">Your bucket list is empty.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+About Me | Sanket Suman Patra
+{% endblock %}
+
+{% block body %}
+<style>
+    .about-container {
+        max-width: 850px;
+        height: auto;
+        margin: 0 auto;
+        padding: 40px;
+        background-color: dark;
+    }
+
+    h2 {
+        font-size: 2.5em;
+        color: #E8B86D;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 2em;
+        color: #E8B86D;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        margin-bottom: 30px;
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+
+    .contact-info p {
+        font-size: 1.1em;
+        color: #E7E8D8
+        margin-bottom: 10px;
+    }
+
+    .contact-info a {
+        color: #3498db;
+        text-decoration: none;
+    }
+
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="about-container">
+    <h2>About Me</h2>
+
+    <div class="description">
+        <p>Hi, I'm <strong>Sanket Suman Patra</strong>, a student of Computer Science Engineering (CSE) at <strong>ITER, SOA University</strong>. This project is a part of my personal journey to explore the world of web development. I’m passionate about coding and constantly looking to enhance my skills in various technologies.</p>
+
+        <p>For this project, I chose *Django*, a high-level Python web framework, due to its simplicity and power. Django allowed me to build this application quickly and efficiently, with its built-in tools and structure helping me focus on the unique parts of my project instead of reinventing the wheel. Being Python-based, it made the development process smoother and faster, which was very helpful during my project timeline.</p>
+
+        <h3 class="section-title">Why I Love Django</h3>
+        <p>I really enjoyed working with Django because it is easy to learn and use, and its Python-based syntax made it much more intuitive. With Django, I could create a fully functional web application with minimal effort, thanks to its excellent documentation and strong community support. The speed at which I could develop and deploy features made it the perfect choice for my solo project.</p>
+    </div>
+
+    <div class="contact-info">
+        <h3 class="section-title">Contact Me</h3>
+        <p><strong>Email:</strong> <a href="mailto:sanket@example.com">sanket@example.com</a></p>
+        <p><strong>Phone:</strong> (123) 456-7890</p>
+        <p><strong>College:</strong> ITER, SOA University</p>
+    </div>
+</div>
+
+{% endblock %}

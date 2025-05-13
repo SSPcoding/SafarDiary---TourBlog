@@ -1,0 +1,285 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Feature
+{% endblock %}
+
+{% block body %}
+ <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fa;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: #E8E7AB;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        section p {
+            margin-top: 10px;
+        }
+
+        section ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        section ul li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        /* Call-to-Action Button */
+        .cta-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #E8E7AB;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: red;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            .cta-button {
+                font-size: 1em;
+                padding: 10px 25px;
+            }
+        }
+    </style>
+
+<header>
+    <h1>Features of TourBlog</h1>
+    <p>TourBlog is the ultimate platform for travel enthusiasts to share their opinions, experiences, and reviews about tourist locations worldwide. Whether you’re looking to discover a hidden gem or learn about popular destinations, TourBlog lets users post tweets, share images, and engage with a global travel community. Here’s what makes TourBlog stand out:</p>
+</header>
+
+<section class="feature">
+    <h2>1. Easy-to-Post Reviews and Opinions</h2>
+    <p><strong>Create Posts with Tweets and Images:</strong></p>
+    <ul>
+        <li>Share your thoughts and experiences in a tweet-like format—quick, simple, and to the point.</li>
+        <li>Upload images of your travel experiences to make your posts more engaging and informative for others.</li>
+        <li>Reach a global audience of fellow travelers by sharing your post on the platform.</li>
+    </ul>
+    <p><strong>Why It's Great:</strong></p>
+    <ul>
+        <li>Effortless to share experiences in bite-sized posts.</li>
+        <li>Visual storytelling with images to accompany your thoughts.</li>
+        <li>Share opinions, tips, or simply fun experiences about any tourist destination.</li>
+    </ul>
+</section>
+
+<section class="feature">
+    <h2>2. Explore Posts by Location</h2>
+    <p><strong>Interactive Map & Search:</strong></p>
+    <ul>
+        <li>Discover user-generated content on specific tourist locations around the globe.</li>
+        <li>Easily search for posts by location, activity type, or tourist landmarks.</li>
+    </ul>
+    <p><strong>Why It's Great:</strong></p>
+    <ul>
+        <li>Find real-time reviews and opinions for the location you're interested in.</li>
+        <li>User-generated content ensures authentic, up-to-date information.</li>
+        <li>Stay inspired with travel recommendations from people who have been there.</li>
+    </ul>
+</section>
+
+<section class="feature">
+    <h2>3. Share Your Travel Story</h2>
+    <p><strong>Create a Personal Travel Profile:</strong></p>
+    <ul>
+        <li>Set up a personalized profile to track your travel posts, favorite destinations, and interactions with other users.</li>
+        <li>Organize your posts by categories (e.g., beaches, mountains, city tours, cultural landmarks) for easier browsing.</li>
+    </ul>
+    <p><strong>Why It's Great:</strong></p>
+    <ul>
+        <li>Build your travel identity and connect with like-minded explorers.</li>
+        <li>Keep a personal archive of your travel stories, reviews, and photos.</li>
+        <li>Connect with people who share similar travel interests and locations.</li>
+    </ul>
+</section>
+
+<section class="feature">
+    <h2>4. Image Sharing and Galleries</h2>
+    <p><strong>Post Travel Photos & Galleries:</strong></p>
+    <ul>
+        <li>Share not just your opinion but also beautiful travel photos from your trips to enrich the experience for other users.</li>
+        <li>Create galleries to show different aspects of a location, from food to culture to scenery.</li>
+    </ul>
+    <p><strong>Why It's Great:</strong></p>
+    <ul>
+        <li>Engage users visually with high-quality images of real travel experiences.</li>
+        <li>Build a visual portfolio of your travel adventures to share with friends, family, and followers.</li>
+        <li>Inspire others to visit the places you've explored.</li>
+    </ul>
+</section>
+
+<section class="feature">
+    <h2>5. Personalized Recommendations</h2>
+    <p><strong>Get Tailored Suggestions:</strong></p>
+    <ul>
+        <li>Based on your activity, profile, and interests, receive recommendations for other tourist locations, reviews, and opinions from fellow travelers.</li>
+        <li>Discover trending destinations that other users are talking about.</li>
+    </ul>
+    <p><strong>Why It's Great:</strong></p>
+    <ul>
+        <li>Save time planning your next trip with suggestions based on your preferences.</li>
+        <li>Stay ahead of the curve with trending locations that match your travel style.</li>
+    </ul>
+</section>
+
+<section class="feature">
+    <h2>6. Engage with the Community</h2>
+    <p><strong>Like, Comment, and Share:</strong></p>
+    <ul>
+        <li>Interact with other travelers by liking and commenting on their posts to spark conversation and share insights.</li>
+        <li>Share interesting posts on social media to inspire your friends and followers.</li>
+    </ul>
+    <p><strong>Why It's Great:</strong></p>
+    <ul>
+        <li>Connect with a community of passionate travelers and explorers.</li>
+        <li>Exchange tips, ideas, and experiences to make your travels even more enriching.</li>
+        <li>Build a network of people who appreciate the same travel experiences as you.</li>
+    </ul>
+</section>
+
+<section class="feature">
+    <h2>7. Post and Discover Reviews by Activity</h2>
+    <p><strong>Filter by Activity Type:</strong></p>
+    <ul>
+        <li>Search for posts specifically about the activities you’re most interested in—be it adventure, food, nature walks, or cultural explorations.</li>
+        <li>Find detailed reviews about the best experiences in each location.</li>
+    </ul>
+    <p><strong>Why It's Great:</strong></p>
+    <ul>
+        <li>Helps you plan travel activities based on authentic user reviews.</li>
+        <li>Discover the best things to do in a destination from those who have experienced them firsthand.</li>
+    </ul>
+</section>
+
+<section class="feature">
+    <h2>8. Mobile-Friendly Experience</h2>
+    <p><strong>Access on the Go:</strong></p>
+    <ul>
+        <li>With our mobile-friendly platform, you can post, browse, and engage with the travel community from anywhere in the world.</li>
+        <li>Stay connected with your travel network, no matter where you are.</li>
+    </ul>
+    <p><strong>Why It's Great:</strong></p>
+    <ul>
+        <li>Seamless experience from desktop to mobile.</li>
+        <li>Post updates and share your travel moments in real-time.</li>
+    </ul>
+</section>
+
+<section class="feature">
+    <h2>9. Secure and Privacy-Focused</h2>
+    <p><strong>Safe, Private, and Secure:</strong></p>
+    <ul>
+        <li>TourBlog values your privacy and ensures that your content is protected.</li>
+        <li>Customize your profile’s visibility settings to control who sees your posts and reviews.</li>
+    </ul>
+    <p><strong>Why It's Great:</strong></p>
+    <ul>
+        <li>Enjoy a secure environment while engaging with the community.</li>
+        <li>Feel comfortable sharing personal travel experiences while maintaining control over your privacy.</li>
+    </ul>
+</section>
+
+<section class="cta">
+    <h2>Join the Travel Community Today!</h2>
+    <p><strong>Get Started Now!</strong></p>
+    <p>Sign up for free and start posting your travel experiences, exploring new destinations, and connecting with other like-minded travelers.</p>
+    <ul>
+        <li><a href="{% url "register"%}" class="cta-button">Sign Up</a></li>
+        <li><a href="{% url "tweet_list" %}" class="cta-button">Explore</a></li>
+    </ul>
+</section>
+
+<footer>
+    <p>Have questions about our features? Feel free to reach out to us at <strong><a href="mailto:contact@tourblog.com">contact@tourblog.com</a></strong></p>
+    <p><a href="#faq"><strong>Read the FAQs</strong></a> for quick answers to common questions.</p>
+</footer>
+{% endblock %}

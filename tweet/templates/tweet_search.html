@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div style="padding: 20px; color: #fff;">
+        <h2 style="text-align: center; font-size: 24px; margin-bottom: 20px;">🔍 Search Results for "{{ query }}"</h2>
+
+        {% if results %}
+            <ul style="list-style-type: none; padding: 0;">
+                {% for tweet in results %}
+                    <li style="margin-bottom: 20px; padding: 15px; background: linear-gradient(135deg, rgba(50, 50, 50, 0.7), rgba(30, 30, 30, 0.9)); 
+                               border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+                               transition: all 0.3s ease;"
+                        onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0px 6px 15px rgba(0, 0, 0, 0.5)';"
+                        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0px 4px 10px rgba(0, 0, 0, 0.3)';">
+                        
+                        <strong style="font-size: 18px; color: #fff;">@{{ tweet.user.username }}</strong> 
+                        <br>
+                        <p style="font-size: 16px; color: #ddd; margin-top: 5px;">{{ tweet.text }}</p>  
+                        <br>
+
+                        {% if tweet.photo %}
+                            <img src="{{ tweet.photo.url }}" alt="Tweet Image" style="max-width: 300px; height: auto; 
+                                        border-radius: 8px; display: block; margin-top: 5px;">
+                        {% endif %}
+
+                        <br>
+                        <small style="color: #bbb; font-size: 14px;">🕒 Posted on: {{ tweet.created_at }}</small>
+                        <br>
+
+                        <!-- Save/Unsave Button for Bucket List -->
+                        <div style="margin-top: 10px;">
+                            {% if tweet in request.user.bucketlist.tweets.all %}
+                                <form action="{% url 'remove_from_bucket_list' tweet.id %}" method="POST" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" style="border: none; background: none; color: red; font-size: 16px; 
+                                                cursor: pointer; transition: all 0.3s ease; margin-right: 10px;
+                                                text-shadow: 0px 2px 5px rgba(255, 0, 0, 0.4);"
+                                            onmouseover="this.style.textShadow='0px 4px 10px rgba(255, 0, 0, 0.7)';"
+                                            onmouseout="this.style.textShadow='0px 2px 5px rgba(255, 0, 0, 0.4)';">
+                                        ❌ Unsave
+                                    </button>
+                                </form>
+                            {% else %}
+                                <form action="{% url 'add_to_bucket_list' tweet.id %}" method="POST" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" style="border: none; background: none; color: lightblue; font-size: 16px;
+                                                cursor: pointer; transition: all 0.3s ease;
+                                                text-shadow: 0px 2px 5px rgba(0, 150, 255, 0.4);"
+                                            onmouseover="this.style.textShadow='0px 4px 10px rgba(0, 150, 255, 0.7)';"
+                                            onmouseout="this.style.textShadow='0px 2px 5px rgba(0, 150, 255, 0.4)';">
+                                        ➕ Save to Bucket List
+                                    </button>
+                                </form>
+                            {% endif %}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p style="color: #ccc; text-align: center;">🚫 No tweets found containing "{{ query }}".</p>
+        {% endif %}
+    </div>
+{% endblock %}

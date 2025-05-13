@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<!-- Profile Container -->
+<div style="
+    max-width: 900px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    overflow: hidden;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;">
+
+    <!-- Header Section -->
+    <div style="
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        padding: 70px 30px;
+        text-align: center;
+        color: white;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;">
+
+        <!-- Profile Picture Placeholder -->
+        <div style="
+            width: 140px; height: 140px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+            border: 5px solid white;">
+            {{ profile.user.username|first|upper }}
+        </div>
+
+        <h2 style="margin: 15px 0 5px; font-size: 28px; font-weight: bold;">
+            {{ profile.user.username }}
+        </h2>
+
+        <p style="font-size: 16px; opacity: 0.9;">
+            {% if profile.bio %}
+                "{{ profile.bio }}"
+            {% else %}
+                <em>No bio added yet.</em>
+            {% endif %}
+        </p>
+
+        <!-- Buttons Container -->
+        {% if profile.user == request.user %}
+            <div style="margin-top: 15px; display: flex; gap: 15px;">
+
+                <!-- Edit Bio Button -->
+                <a href="{% url 'update_bio' %}" 
+                    style="display: inline-block; padding: 12px 30px;
+                           font-size: 14px; color: white; background: #ff4081;
+                           border-radius: 30px; text-decoration: none;
+                           transition: 0.3s; font-weight: bold;
+                           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);">
+                    ✏️ Edit Bio
+                </a>
+
+                <!-- Bucket List Button -->
+                <a href="{% url 'bucket_list' %}" 
+                    style="display: inline-block; padding: 12px 30px;
+                           font-size: 14px; color: white; background: #4CAF50;
+                           border-radius: 30px; text-decoration: none;
+                           transition: 0.3s; font-weight: bold;
+                           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);">
+                    ⭐ View Bucket List
+                </a>
+
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Tweets Section -->
+    <div style="padding: 30px; color: #333;">
+        <h3 style="color: white; text-align: center; margin-bottom: 20px; font-size: 22px;">
+            📌 User's Posts
+        </h3>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+            {% for tweet in tweets %}
+                <div style="
+                    background: white;
+                    padding: 15px;
+                    border-radius: 10px;
+                    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+                    transition: 0.3s;
+                    text-align: left;
+                    position: relative;
+                    font-size: 16px;">
+                    
+                    <p style="color: #444; margin: 5px 0;">{{ tweet.text }}</p>
+
+                    {% if tweet.photo %}
+                        <img src="{{ tweet.photo.url }}" alt="Tweet Image" 
+                             style="max-width: 100%; border-radius: 8px; margin-top: 10px;">
+                    {% endif %}
+
+                    <small style="color: #777;">📅 {{ tweet.created_at }}</small>
+                </div>
+            {% empty %}
+                <p style="text-align: center; color: #777; font-size: 16px;">No posts yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

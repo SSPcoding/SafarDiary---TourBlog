@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: dark;
+    }
+
+
+
+    .register-box h2 {
+        font-weight: bold;
+    }
+
+    .register-box h4 {
+        padding-bottom: 20px;
+    }
+
+    .register-box p {
+        padding-top: 20px;
+    }
+
+    .register-box form {
+        margin-top: 20px;
+    }
+
+    .btn-promary {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .btn-promary:hover {
+        background-color: darkgreen;
+    }
+</style>
+
+<div class="container">
+    <div class="register-box">
+        <h2 style="color:white;">Register</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-promary">Register</button>
+        </form>
+        <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+    </div>
+</div>
+
+{% endblock %}

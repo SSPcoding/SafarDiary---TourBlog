@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Tweet Page
+{% endblock %}
+
+{% block body %}
+
+<!-- Header Section -->
+
+
+<style>
+    .header-container {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+    }
+
+    .header-image {
+        width: 990px;
+        height: 100%;
+        object-fit: cover;
+        filter: blur(6px);
+        position: absolute;
+        top:0;
+        margin-left: 65px;
+        left:0;
+    }
+
+    .header-text {
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        color: #FFBB70;
+        padding: 10px 20px;
+        text-shadow:2px 2px 5px rgba(0,0,0,1.5)
+    }
+</style>
+
+<!-- Tweet Controls -->
+<a class="btn btn-primary my-3 mx-5" href="{% url 'tweet_create' %}">Create new Tweet</a>
+{% if user.is_authenticated %}
+    <a class="btn btn-info my-3 mx-5" href="{% url 'user_profile' user.username %}">My Profile</a>
+{% endif %}
+
+<div class="header-container">
+    <img src="https://png.pngtree.com/thumb_back/fh260/background/20220523/pngtree-travel-india-with-ancient-and-modern-building-with-water-reflection-image_1388690.jpg" 
+         alt="Header Image" class="header-image">
+    <div class="header-text">
+        <b>TσυɾBʅσɠ</b>
+    </div>
+</div>
+<!-- Tweet Cards -->
+<div class="container card-container mt-5">
+    <div class="row gap-3">
+        {% for tweet in tweets %}
+        <div class="card text-bg-dark">
+            <img src="{{ tweet.photo.url }}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+                <h5 class="card-title">{{ tweet.user.username }}</h5>
+                <p class="card-text" style="overflow: hidden;">{{ tweet.text }}</p>
+                <div class="button-group">
+                    {% if tweet.user == user %}
+                    <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary">
+                        <i class="fa fa-pencil-alt"></i>
+                    </a>
+                    <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger">Delete</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- States of India Section -->
+<div class="fixed-container">
+    <h2>States of India</h2>
+    <ul>
+        <li>Andhra Pradesh</li>
+        <li>Arunachal Pradesh</li>
+        <li>Assam</li>
+        <li>Bihar</li>
+        <li>Chhattisgarh</li>
+        <li>Goa</li>
+        <li>Gujarat</li>
+        <li>Haryana</li>
+        <li>Himachal Pradesh</li>
+        <li>Jharkhand</li>
+        <li>Karnataka</li>
+        <li>Kerala</li>
+        <li>Madhya Pradesh</li>
+        <li>Maharashtra</li>
+        <li>Manipur</li>
+        <li>Meghalaya</li>
+        <li>Mizoram</li>
+        <li>Nagaland</li>
+        <li>Odisha</li>
+        <li>Punjab</li>
+        <li>Rajasthan</li>
+        <li>Sikkim</li>
+        <li>Tamil Nadu</li>
+        <li>Telangana</li>
+        <li>Tripura</li>
+        <li>Uttar Pradesh</li>
+        <li>Uttarakhand</li>
+        <li>West Bengal</li>
+    </ul>
+</div>
+
+{% endblock %}
