@@ -28,5 +28,15 @@
 
 ## 📸 Screenshots
 
-*(Add screenshots here by uploading images in the repo and linking them like below)*
+### Home Page
+![Home Page](https://github.com/SSPcoding/SafarDiary---TourBlog/blob/master/screenshots/Screenshot%202025-05-17%20000310.png)
+
+### Sign Up Page
+![Sign Up Page](https://github.com/SSPcoding/SafarDiary---TourBlog/blob/master/screenshots/Screenshot%202025-05-17%20000328.png)
+
+### Login Page
+![Login Page](https://github.com/SSPcoding/SafarDiary---TourBlog/blob/master/screenshots/Screenshot%202025-05-17%20000357.png)
+
+### Profile Page
+![Profile Page](hhttps://github.com/SSPcoding/SafarDiary---TourBlog/blob/master/screenshots/Screenshot%202025-05-17%20000627.png)
 
