@@ -40,3 +40,6 @@
 ### Profile Page
 ![Profile Page](https://github.com/SSPcoding/SafarDiary---TourBlog/blob/master/screenshots/Screenshot%202025-05-17%20000627.png)
 
+### Bucket list
+![Bucket list](https://github.com/SSPcoding/SafarDiary---TourBlog/blob/master/screenshots/Screenshot%202025-05-17%20005611.png)
+
