@@ -38,5 +38,5 @@
 ![Login Page](https://github.com/SSPcoding/SafarDiary---TourBlog/blob/master/screenshots/Screenshot%202025-05-17%20000357.png)
 
 ### Profile Page
-![Profile Page](hhttps://github.com/SSPcoding/SafarDiary---TourBlog/blob/master/screenshots/Screenshot%202025-05-17%20000627.png)
+![Profile Page](https://github.com/SSPcoding/SafarDiary---TourBlog/blob/master/screenshots/Screenshot%202025-05-17%20000627.png)
 
